@@ -1,0 +1,87 @@
+% 1. Relax Assumptions
+% 2. Classification Problems
+% 3. It is clear that dimension do not damage us?
+% 4. Can we add Arcene?
+% 5. Can we show nice things to avoid concern fro mcomputation time?
+% 6. Scalability results.
+% 7. Explanatory capabilities
+% 8. How many factors are updated?
+% 11. Performance with different number of samples
+% 12. "Many details about the app to DA need to be filled"
+
+\documentclass{article}
+
+\usepackage{graphicx,
+            amsmath,
+            subfigure,
+            amsfonts,
+            tikz,
+            bm}
+
+\usepackage{nips12submit_e,times}
+
+\usepackage[pdftex]{hyperref}
+
+\renewcommand\arraystretch{1.2}
+\newcommand{\f}[1]{\textbf{#1}}
+
+\begin{document}
+
+\title{Supplementary Material for \emph{Semi-Supervised Domain Adaptation with Non-Parametric Copulas}}
+\nipsfinalcopy
+\maketitle
+\section*{Setup of Datasets for Domain Adaptation Experiments (Table 2)}
+\begin{enumerate}
+  \item \textbf{Wine:} 
+    \begin{itemize}
+      \item \textbf{URL:} \href{http://archive.ics.uci.edu/ml/datasets/Wine+Quality}{\texttt{http://archive.ics.uci.edu/ml/datasets/Wine+Quality}}
+      \item \textbf{Description:} Twelve chemical properties of different wine brands are given as input vectors for each sample. As
+            the ouput variable, an expert wine-taster quality score, ranging from 1 to 10.
+      \item \textbf{Number of attributes:} 12.
+      \item \textbf{Source task:} Predict white wines quality score.
+      \item \textbf{Target task:} Predict red wines quality score.
+    \end{itemize}
+  \item \textbf{Sarcos:} 
+    \begin{itemize}
+      \item \textbf{URL:} \href{http://www.gaussianprocess.org/gpml/data/}{\texttt{http://www.gaussianprocess.org/gpml/data/}}
+      \item \textbf{Description:} The data relates to an inverse dynamics problem for a seven degrees-of-freedom SARCOS anthropomorphic robot arm. The task is to map from a 21-dimensional input space (7 joint positions, 7 joint velocities, 7 joint accelerations) to the corresponding 7 joint torques. 
+      \item \textbf{Number of attributes:} 21.
+      \item \textbf{Source task:} Predict first torque.
+      \item \textbf{Target task:} Predict last  torque.
+    \end{itemize}
+  \item \textbf{Rocks-Mines:} 
+    \begin{itemize}
+      \item \textbf{URL:} \href{http://archive.ics.uci.edu/ml/datasets/Connectionist+Bench+(Sonar,+Mines+vs.+Rocks)}{\texttt{http://archive.ics.uci.edu/ml/datasets/Connectionist...}}
+      \item \textbf{Description:} Each pattern is a set of 60 numbers in the range 0.0 to 1.0. Each number represents the energy within a particular frequency band when bouncing sonar signals to either mines or rocks.
+      \item \textbf{Number of attributes:} 60.
+      \item \textbf{Source task:} Predict energy within the last frequency band read from mines.
+      \item \textbf{Target task:} Predict energy within the last frequency band read from rocks.
+    \end{itemize}
+  \item \textbf{Hill-Valleys:} 
+    \begin{itemize}
+      \item \textbf{URL:} \href{http://archive.ics.uci.edu/ml/datasets/Hill-Valley}{\texttt{http://archive.ics.uci.edu/ml/datasets/Hill-Valley}}
+      \item \textbf{Description:} Each record represents 100 points on a two-dimensional graph. When plotted in order (from 1 through 100) as the Y coordinate, the points will create either a Hill (a bump in the terrain) or a Valley (a dip in the terrain). 
+      \item \textbf{Number of attributes:} 100.
+      \item \textbf{Source task:} Predict altitude at the middle of a valley.
+      \item \textbf{Target task:} Predict altitude at the middle of a hill.
+    \end{itemize}
+  \item \textbf{Axis-Slice:} 
+    \begin{itemize}
+      \item \textbf{URL:} \href{http://archive.ics.uci.edu/ml/datasets/Relative+location+of+CT+slices+on+axial+axis}{\texttt{http://archive.ics.uci.edu/ml/datasets/Relative...}}
+      \item \textbf{Description:} The data was retrieved from a set of 53500 CT images from 74 different 
+      patients (43 male, 31 female). Each CT slice is described by two histograms in polar space. 
+      The first histogram describes the location of bone structures in the image, the second the location of air inclusions inside of the body.
+      \item \textbf{Number of Attributes:} 386
+      \item \textbf{Source task:} Predict first bone structure of female patients.
+      \item \textbf{Target task:} Predict first bone structure of male patients.
+    \end{itemize}
+  \item \textbf{Isolet:} 
+    \begin{itemize}
+      \item \textbf{URL:} \href{http://archive.ics.uci.edu/ml/datasets/ISOLET}{\texttt{http://archive.ics.uci.edu/ml/datasets/ISOLET}}
+      \item \textbf{Description:} 150 subjects spoke the name of each letter of the alphabet twice. The features include spectral coefficients; contour features, sonorant features, pre-sonorant features, and post-sonorant features. 
+      \item \textbf{Number of Attributes:} 617
+      \item \textbf{Source task:} Predict last post-sonorant feature from first half of speakers. 
+      \item \textbf{Target task:} Predict last post-sonorant feature from second half of speakers.
+    \end{itemize}
+\end{enumerate}
+\end{document}
